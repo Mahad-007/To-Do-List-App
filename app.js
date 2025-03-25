@@ -17,6 +17,7 @@ const taskInput=document.getElementById('taskinput')
     let task = document.getElementById("taskinput").value;
     alert("Task added!");
     const list = document.querySelector("ul");
+    list.classList.add("list-items");
     // let checkbox = document.createElement("taskinput");
     // checkbox.type="checkbox";
     const newTask = document.createElement("li");
@@ -24,11 +25,14 @@ const taskInput=document.getElementById('taskinput')
     list.appendChild(newTask);
     let deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
+    deleteBtn.classList.add("delete-btn");
     list.appendChild(deleteBtn);
     let completeBtn = document.createElement("button");
     completeBtn.textContent = "Completed";
+    completeBtn.classList.add("complete-btn");
     list.appendChild(completeBtn);
     let editBtn = document.createElement("button");
+    editBtn.classList.add("edit-btn");
     editBtn.textContent = "Edit";
     list.appendChild(editBtn);
   }

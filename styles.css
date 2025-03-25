@@ -26,6 +26,56 @@ button{
     border-radius: 10px;
     cursor: pointer;
 }
+
+.delete-btn{
+    margin-left: 300px;
+    margin-top: auto;
+    background-color: rgb(13, 5, 54);
+    color: white;
+    font-size: 20px;
+    padding: 3px 6px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.complete-btn{
+    margin-left: 40px;
+    margin-top: auto;
+    background-color: rgb(13, 5, 54);
+    color: white;
+    font-size: 20px;
+    padding: 3px 6px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.edit-btn{
+    margin-left: 40px;
+    margin-top: auto;
+    background-color: rgb(13, 5, 54);
+    color: white;
+    font-size: 20px;
+    padding: 3px 6px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.list-items{
+    /*margin-top: auto;*/
+    
+    margin-left: 40px;
+    padding: 10px 20px;
+    font-size: 20px;
+    align-items: vertical;  
+    
+    
+}
+.task-text{
+    margin-top: 100px;
+}
+
+
 input{
     margin-left: 40px;
     padding: 10px 20px;
