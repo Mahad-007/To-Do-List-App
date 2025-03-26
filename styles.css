@@ -71,13 +71,13 @@ button{
     
     
 }
-.task-text{
-    margin-top: 100px;
-}
 
 
 input{
     margin-left: 40px;
     padding: 10px 20px;
     
+}
+.div{
+    margin-top: 100px;
 }

@@ -16,6 +16,9 @@ const taskInput=document.getElementById('taskinput')
   function addTask(){
     let task = document.getElementById("taskinput").value;
     alert("Task added!");
+    // let textDiv = document.createElement("div");
+    // textDiv.textContent = task;
+    // textDiv.classList.add("task-text");
     const list = document.querySelector("ul");
     list.classList.add("list-items");
     // let checkbox = document.createElement("taskinput");
@@ -35,6 +38,7 @@ const taskInput=document.getElementById('taskinput')
     editBtn.classList.add("edit-btn");
     editBtn.textContent = "Edit";
     list.appendChild(editBtn);
+    document.getElementById("taskinput").value = "";
   }
   
   const button = document.querySelector("button");
