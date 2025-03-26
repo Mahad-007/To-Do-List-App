@@ -1,58 +1,74 @@
-// // function addTask() {
-// //     const task = prompt("Enter a new task");
-//     alert("Task added!");
-//     const list = document.querySelector("ul");
-//     const newTask = document.createElement("li");
-//     newTask.textContent = task;
-//     list.appendChild(newTask);
+const taskInput = document.getElementById("taskinput");
 
-//   }
-// let deleteBtn = document.createElement("button");
-// deleteBtn.textContent = "Delete";
-// deleteBtn.onclick = function () {
-//   ul.removeChild(li);
-// };
-const taskInput=document.getElementById('taskinput')
-  function addTask(){
-    let task = document.getElementById("taskinput").value;
-    alert("Task added!");
-    // let textDiv = document.createElement("div");
-    // textDiv.textContent = task;
-    // textDiv.classList.add("task-text");
-    const list = document.querySelector("ul");
-    list.classList.add("list-items");
-    // let checkbox = document.createElement("taskinput");
-    // checkbox.type="checkbox";
-    const newTask = document.createElement("li");
-    newTask.textContent = task;
-    list.appendChild(newTask);
-    let deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "Delete";
-    deleteBtn.classList.add("delete-btn");
-    list.appendChild(deleteBtn);
-    let completeBtn = document.createElement("button");
-    completeBtn.textContent = "Completed";
-    completeBtn.classList.add("complete-btn");
-    list.appendChild(completeBtn);
-    let editBtn = document.createElement("button");
-    editBtn.classList.add("edit-btn");
-    editBtn.textContent = "Edit";
-    list.appendChild(editBtn);
-    document.getElementById("taskinput").value = "";
-  }
-  
-  const button = document.querySelector("button");
-  
-  button.addEventListener("click", addTask);
-//   function createParagraph() {
-//     const para = document.createElement("p");
-//     para.textContent = "You clicked the button!";
-//     document.body.appendChild(para);
-//   }
-  
-//   const buttons = document.querySelectorAll("button");
-  
-//   for (const button of buttons) {
-//     button.addEventListener("click", createParagraph);
-//   }
-  
+function addTask() {
+  let task = taskInput.value.trim();
+  if (task === "") return; // Prevent empty tasks
+
+  alert("Task added!");
+
+  const list = document.getElementById("tasklist");
+
+  // Create Task Item Container
+  let taskItem = document.createElement("div");
+  taskItem.classList.add("task-item");
+
+  // Create Task Description Div
+  let taskTextContainer = document.createElement("div");
+  taskTextContainer.textContent = task;
+  taskTextContainer.classList.add("task-text-container");
+  taskTextContainer.contentEditable = "false"; // Initially not editable
+
+  // Create Buttons Container
+  let buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("task-buttons");
+
+  // Delete Button
+  let deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.classList.add("task-btn", "delete-btn");
+  deleteBtn.onclick = function () {
+      list.removeChild(taskItem);
+  };
+
+  // Complete Button
+  let completeBtn = document.createElement("button");
+  completeBtn.textContent = "Completed";
+  completeBtn.classList.add("task-btn", "complete-btn");
+  completeBtn.onclick = function () {
+      taskTextContainer.style.textDecoration = "line-through";
+      taskTextContainer.style.color = "gray";
+  };
+
+  // Edit Button
+  let editBtn = document.createElement("button");
+  editBtn.textContent = "Edit";
+  editBtn.classList.add("task-btn", "edit-btn");
+  editBtn.onclick = function () {
+      if (taskTextContainer.contentEditable === "false") {
+          taskTextContainer.contentEditable = "true";
+          taskTextContainer.focus();
+          editBtn.textContent = "Save";
+      } else {
+          taskTextContainer.contentEditable = "false";
+          editBtn.textContent = "Edit";
+      }
+  };
+
+  // Append Buttons to Buttons Container
+  buttonsContainer.appendChild(editBtn);
+  buttonsContainer.appendChild(completeBtn);
+  buttonsContainer.appendChild(deleteBtn);
+
+  // Append Task Description and Buttons to Task Item
+  taskItem.appendChild(taskTextContainer);
+  taskItem.appendChild(buttonsContainer);
+
+  // Append Task Item to List
+  list.appendChild(taskItem);
+
+  // Clear Input
+  taskInput.value = "";
+}
+
+// Attach event listener to "Add Task" button
+document.querySelector("button").addEventListener("click", addTask);

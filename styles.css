@@ -28,7 +28,7 @@ button{
 }
 
 .delete-btn{
-    margin-left: 300px;
+    margin-left: auto;
     margin-top: auto;
     background-color: rgb(13, 5, 54);
     color: white;
@@ -39,7 +39,7 @@ button{
 }
 
 .complete-btn{
-    margin-left: 40px;
+    margin-left: auto;
     margin-top: auto;
     background-color: rgb(13, 5, 54);
     color: white;
@@ -50,7 +50,7 @@ button{
 }
 
 .edit-btn{
-    margin-left: 40px;
+    margin-left: auto;
     margin-top: auto;
     background-color: rgb(13, 5, 54);
     color: white;
@@ -78,6 +78,6 @@ input{
     padding: 10px 20px;
     
 }
-.div{
-    margin-top: 100px;
+.task-item{
+    margin-top: 40px;
 }
