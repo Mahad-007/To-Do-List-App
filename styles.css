@@ -1,6 +1,10 @@
 body {
     background-color: lightgrey;
     color: blue;
+    font-size: x-large;
+    
+    
+    
   }
 
 h1{
@@ -36,6 +40,7 @@ button{
     padding: 3px 6px;
     border-radius: 10px;
     cursor: pointer;
+    
 }
 
 .complete-btn{
@@ -67,7 +72,8 @@ button{
     margin-left: 40px;
     padding: 10px 20px;
     font-size: 20px;
-    align-items: vertical;  
+    align-items: horizontal;  
+    
     
     
 }
@@ -80,4 +86,9 @@ input{
 }
 .task-item{
     margin-top: 40px;
+}
+.task{
+margin-top: 10 px;
+font-size: 50px;
+
 }

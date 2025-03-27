@@ -38,7 +38,11 @@ function addTask() {
       taskTextContainer.style.textDecoration = "line-through";
       taskTextContainer.style.color = "gray";
   };
-
+  completeBtn.addEventListener("click", function () {
+    editBtn.style.display = "none"; // Hide edit button after clicking "Completed"
+    textDiv.style.textDecoration = "line-through"; // Strike-through text
+});
+  
   // Edit Button
   let editBtn = document.createElement("button");
   editBtn.textContent = "Edit";
@@ -55,6 +59,10 @@ function addTask() {
   };
 
   // Append Buttons to Buttons Container
+
+ 
+  
+  
   buttonsContainer.appendChild(editBtn);
   buttonsContainer.appendChild(completeBtn);
   buttonsContainer.appendChild(deleteBtn);
@@ -62,6 +70,7 @@ function addTask() {
   // Append Task Description and Buttons to Task Item
   taskItem.appendChild(taskTextContainer);
   taskItem.appendChild(buttonsContainer);
+  
 
   // Append Task Item to List
   list.appendChild(taskItem);
